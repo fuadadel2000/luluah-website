@@ -3,79 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مميزات لؤلؤة ERP</title>
+    <title>مميزات نظام لؤلؤة ERP</title>
     <meta name="description" content="اكتشف مميزات نظام لؤلؤة ERP المتكامل: تعدد الفروع، ذكاء المخزون، تطبيق جوال، تقارير محاسبية، وصلاحيات متقدمة.">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0F172A; color: #E2E8F0; line-height: 1.6; }
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
-        header { background-color: #1E293B; padding: 20px 0; border-bottom: 2px solid #3B82F6; }
-        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 2rem; font-weight: bold; color: #3B82F6; }
-        .logo span { color: #F59E0B; }
-        nav a { color: #E2E8F0; margin: 0 15px; text-decoration: none; font-size: 1.1rem; }
-        nav a:hover { color: #3B82F6; }
-        h1 { text-align: center; margin: 40px 0; font-size: 2.5rem; color: #F59E0B; }
-        .feature-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
-        .feature-item { background: #1E293B; padding: 30px; border-radius: 12px; border: 1px solid #334155; }
-        .feature-item h2 { font-size: 1.5rem; color: #3B82F6; margin-bottom: 15px; }
-        .feature-item p { color: #94A3B8; font-size: 1rem; }
-        footer { background: #1E293B; text-align: center; padding: 20px; color: #64748B; border-top: 1px solid #334155; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Cairo',sans-serif; background:#0F172A; color:#E2E8F0; line-height:1.7; }
+        .container { max-width:1200px; margin:auto; padding:0 20px; }
+        nav { background:#0F172A; padding:20px 0; position:fixed; top:0; width:100%; z-index:1000; box-shadow:0 2px 20px rgba(0,0,0,0.3); }
+        .nav-container { display:flex; justify-content:space-between; align-items:center; }
+        .logo { font-size:1.8rem; font-weight:900; color:#3B82F6; } .logo span { color:#F59E0B; }
+        .nav-links { display:flex; gap:30px; list-style:none; }
+        .nav-links a { color:#E2E8F0; text-decoration:none; font-weight:600; font-size:1.05rem; transition:0.3s; }
+        .nav-links a:hover { color:#F59E0B; }
+        .main-content { padding:140px 0 80px; }
+        h1 { text-align:center; font-size:2.2rem; font-weight:900; color:#F59E0B; margin-bottom:15px; }
+        .subtitle { text-align:center; color:#94A3B8; margin-bottom:50px; font-size:1.1rem; }
+        .feature-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px; }
+        .feature-card { background:#1E293B; padding:40px 30px; border-radius:16px; border:1px solid #334155; text-align:center; transition:0.3s; }
+        .feature-card:hover { border-color:#3B82F6; transform:translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,0.3); }
+        .feature-card i { font-size:2.5rem; color:#F59E0B; margin-bottom:20px; }
+        .feature-card h3 { font-size:1.3rem; margin-bottom:15px; color:#3B82F6; }
+        .feature-card p { color:#94A3B8; }
+        .whatsapp-float { position:fixed; bottom:30px; right:30px; background:#25D366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; text-decoration:none; box-shadow:0 4px 15px rgba(37,211,102,0.3); z-index:999; transition:0.3s; }
+        .whatsapp-float:hover { transform:scale(1.1); }
+        footer { background:#0B1120; padding:30px 0; text-align:center; color:#64748B; border-top:1px solid #1E293B; margin-top:60px; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container header-content">
+    <nav>
+        <div class="container nav-container">
             <div class="logo">اللؤلؤة <span>للبرمجيات</span></div>
-            <nav>
-                <a href="index.html">الرئيسية</a>
-                <a href="features.html">المميزات</a>
-                <a href="downloads.html">التحميلات</a>
-                <a href="contact.html">اتصل بنا</a>
-            </nav>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="features.html">المميزات</a></li>
+                <li><a href="downloads.html">التحميلات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
         </div>
-    </header>
-
-    <main class="container">
-        <h1>مميزات نظام لؤلؤة</h1>
-        <div class="feature-list">
-            <div class="feature-item">
-                <h2>🏢 تعدد الفروع والمخازن</h2>
-                <p>إدارة عدد لا نهائي من الفروع والمخازن مع عزل تام للبيانات. كل فرع له صلاحياته ومستخدميه وتقاريره الخاصة.</p>
-            </div>
-            <div class="feature-item">
-                <h2>📦 ذكاء المخزون</h2>
-                <p>تتبع فوري للمخزون، تفكيك تلقائي للوحدات (كرتون، باكت، حبة)، تنبيهات ذكية عند انخفاض المخزون أو قرب انتهاء الصلاحية.</p>
-            </div>
-            <div class="feature-item">
-                <h2>📱 تطبيق جوال كامل</h2>
-                <p>نقطة بيع احترافية على هاتفك. بحث ذكي، اقتراحات فورية، دعم الباركود، ومزامنة لحظية مع الخادم.</p>
-            </div>
-            <div class="feature-item">
-                <h2>📊 تقارير محاسبية دقيقة</h2>
-                <p>قائمة الدخل، الميزانية العمومية، ميزان المراجعة، وتقارير الأرباح اليومية والأسبوعية والشهرية.</p>
-            </div>
-            <div class="feature-item">
-                <h2>🔒 صلاحيات متقدمة</h2>
-                <p>تحكم كامل في صلاحيات كل مستخدم (عرض، إضافة، تعديل، حذف) لكل شاشة. مدير النظام يمتلك الصلاحيات الكاملة.</p>
-            </div>
-            <div class="feature-item">
-                <h2>💾 نسخ احتياطي واستعادة</h2>
-                <p>جدولة نسخ احتياطي تلقائية، استعادة فورية للبيانات، وتخزين آمن خارج الموقع.</p>
-            </div>
-            <div class="feature-item">
-                <h2>🛒 نقطة بيع متطورة</h2>
-                <p>واجهة سريعة، دعم الباركود، بحث ذكي، خصومات، طرق دفع متعددة (نقداً، آجل، شبكة)، وطباعة فورية للإيصالات.</p>
-            </div>
-            <div class="feature-item">
-                <h2>📋 إدارة العملاء والموردين</h2>
-                <p>سجل كامل للحركات المالية، الأرصدة، والفواتير. إضافة سندات قبض وصرف بسهولة.</p>
-            </div>
+    </nav>
+    <main class="main-content container">
+        <h1 data-aos="fade-up">مميزات نظام لؤلؤة</h1>
+        <p class="subtitle" data-aos="fade-up">كل ما تحتاجه لإدارة أعمالك بكفاءة عالية</p>
+        <div class="feature-grid">
+            <div class="feature-card" data-aos="zoom-in"><i class="fas fa-building"></i><h3>تعدد الفروع والمخازن</h3><p>عزل تام للبيانات بين عدد لا نهائي من الفروع. كل فرع له صلاحياته وتقاريره.</p></div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-boxes"></i><h3>ذكاء المخزون</h3><p>تفكيك تلقائي للوحدات (كرتون، باكت، حبة)، وتنبيهات ذكية عند انخفاض المخزون.</p></div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-mobile-alt"></i><h3>تطبيق جوال متكامل</h3><p>نقطة بيع احترافية، بحث ذكي، دعم الباركود، ومزامنة لحظية.</p></div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-chart-pie"></i><h3>تقارير محاسبية</h3><p>قائمة دخل، ميزانية، أرباح يومية، وأكثر بتقارير جاهزة.</p></div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-shield-alt"></i><h3>صلاحيات متقدمة</h3><p>تحكم كامل في صلاحيات كل مستخدم لكل شاشة.</p></div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="500"><i class="fas fa-cloud-upload-alt"></i><h3>نسخ احتياطي</h3><p>جدولة تلقائية واستعادة فورية للبيانات.</p></div>
         </div>
     </main>
-
-    <footer>
-        <p>© 2025 اللؤلؤة للبرمجيات والأنظمة. جميع الحقوق محفوظة.</p>
-    </footer>
+    <a href="https://wa.me/967776564550" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <footer><p>© 2025 اللؤلؤة للبرمجيات والأنظمة. جميع الحقوق محفوظة.</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800, once:true});</script>
 </body>
 </html>
