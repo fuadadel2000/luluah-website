@@ -4,70 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تحميل نظام لؤلؤة ERP</title>
-    <meta name="description" content="قم بتحميل أحدث إصدارات نظام لؤلؤة ERP: تطبيق ويندوز، تطبيق أندرويد، ودليل المستخدم.">
+    <meta name="description" content="حمل أحدث إصدارات نظام لؤلؤة ERP: تطبيق ويندوز، تطبيق أندرويد.">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0F172A; color: #E2E8F0; line-height: 1.6; }
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-        header { background-color: #1E293B; padding: 20px 0; border-bottom: 2px solid #3B82F6; }
-        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 2rem; font-weight: bold; color: #3B82F6; }
-        .logo span { color: #F59E0B; }
-        nav a { color: #E2E8F0; margin: 0 15px; text-decoration: none; font-size: 1.1rem; }
-        nav a:hover { color: #3B82F6; }
-        h1 { text-align: center; margin: 40px 0; font-size: 2rem; color: #F59E0B; }
-        .download-card { background: #1E293B; padding: 30px; border-radius: 12px; border: 1px solid #334155; margin: 20px 0; display: flex; align-items: center; gap: 20px; }
-        .download-card img { width: 60px; height: 60px; }
-        .download-card h2 { font-size: 1.3rem; margin-bottom: 10px; color: #3B82F6; }
-        .download-card p { color: #94A3B8; margin-bottom: 15px; }
-        .btn { background-color: #3B82F6; color: white; padding: 12px 25px; text-decoration: none; border-radius: 8px; display: inline-block; }
-        .btn:hover { background-color: #2563EB; }
-        footer { background: #1E293B; text-align: center; padding: 20px; color: #64748B; margin-top: 40px; border-top: 1px solid #334155; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Cairo',sans-serif; background:#0F172A; color:#E2E8F0; line-height:1.7; }
+        .container { max-width:900px; margin:auto; padding:0 20px; }
+        nav { background:#0F172A; padding:20px 0; position:fixed; top:0; width:100%; z-index:1000; box-shadow:0 2px 20px rgba(0,0,0,0.3); }
+        .nav-container { display:flex; justify-content:space-between; align-items:center; }
+        .logo { font-size:1.8rem; font-weight:900; color:#3B82F6; } .logo span { color:#F59E0B; }
+        .nav-links { display:flex; gap:30px; list-style:none; }
+        .nav-links a { color:#E2E8F0; text-decoration:none; font-weight:600; font-size:1.05rem; transition:0.3s; }
+        .nav-links a:hover { color:#F59E0B; }
+        .main-content { padding:140px 0 80px; }
+        h1 { text-align:center; font-size:2.2rem; font-weight:900; color:#F59E0B; margin-bottom:15px; }
+        .subtitle { text-align:center; color:#94A3B8; margin-bottom:50px; }
+        .download-card { background:#1E293B; padding:35px; border-radius:16px; border:1px solid #334155; margin:25px 0; display:flex; align-items:center; gap:25px; transition:0.3s; }
+        .download-card:hover { border-color:#3B82F6; }
+        .download-card i { font-size:2.5rem; color:#F59E0B; width:70px; text-align:center; }
+        .download-card h3 { font-size:1.3rem; margin-bottom:8px; color:#3B82F6; }
+        .download-card p { color:#94A3B8; margin-bottom:12px; }
+        .btn { background:#3B82F6; color:white; padding:12px 28px; border-radius:50px; text-decoration:none; font-weight:700; display:inline-block; transition:0.3s; }
+        .btn:hover { background:#2563EB; transform:translateY(-2px); }
+        .whatsapp-float { position:fixed; bottom:30px; right:30px; background:#25D366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; text-decoration:none; box-shadow:0 4px 15px rgba(37,211,102,0.3); z-index:999; transition:0.3s; }
+        .whatsapp-float:hover { transform:scale(1.1); }
+        footer { background:#0B1120; padding:30px 0; text-align:center; color:#64748B; border-top:1px solid #1E293B; margin-top:60px; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container header-content">
+    <nav>
+        <div class="container nav-container">
             <div class="logo">اللؤلؤة <span>للبرمجيات</span></div>
-            <nav>
-                <a href="index.html">الرئيسية</a>
-                <a href="features.html">المميزات</a>
-                <a href="downloads.html">التحميلات</a>
-                <a href="contact.html">اتصل بنا</a>
-            </nav>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="features.html">المميزات</a></li>
+                <li><a href="downloads.html">التحميلات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
         </div>
-    </header>
-
-    <main class="container">
-        <h1>مركز التحميلات</h1>
-        <div class="download-card">
-            <div>💻</div>
-            <div>
-                <h2>تطبيق ويندوز (سطح المكتب)</h2>
-                <p>الإصدار 5.0 – متوافق مع Windows 10/11</p>
-                <a href="#" class="btn">تحميل (Setup.exe)</a>
-            </div>
-        </div>
-        <div class="download-card">
-            <div>📱</div>
-            <div>
-                <h2>تطبيق أندرويد (لؤلؤة POS)</h2>
-                <p>الإصدار 1.0 – لنظام Android 7.0+</p>
-                <a href="#" class="btn">تحميل (APK)</a>
-            </div>
-        </div>
-        <div class="download-card">
-            <div>📄</div>
-            <div>
-                <h2>دليل المستخدم</h2>
-                <p>شرح كامل لاستخدام النظام</p>
-                <a href="#" class="btn">تحميل (PDF)</a>
-            </div>
-        </div>
+    </nav>
+    <main class="main-content container">
+        <h1 data-aos="fade-up">مركز التحميلات</h1>
+        <p class="subtitle" data-aos="fade-up">أحدث إصدارات نظام لؤلؤة</p>
+        <div class="download-card" data-aos="fade-right"><i class="fas fa-desktop"></i><div><h3>تطبيق ويندوز</h3><p>الإصدار 5.0 – Windows 10/11</p><a href="#" class="btn"><i class="fas fa-download"></i> تحميل</a></div></div>
+        <div class="download-card" data-aos="fade-left"><i class="fas fa-mobile-alt"></i><div><h3>تطبيق أندرويد</h3><p>الإصدار 1.0 – Android 7+</p><a href="#" class="btn"><i class="fas fa-download"></i> تحميل APK</a></div></div>
+        <div class="download-card" data-aos="fade-right"><i class="fas fa-file-pdf"></i><div><h3>دليل المستخدم</h3><p>شرح كامل للنظام</p><a href="#" class="btn"><i class="fas fa-download"></i> تحميل PDF</a></div></div>
     </main>
-
-    <footer>
-        <p>© 2025 اللؤلؤة للبرمجيات والأنظمة. جميع الحقوق محفوظة.</p>
-    </footer>
+    <a href="https://wa.me/967776564550" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <footer><p>© 2025 اللؤلؤة للبرمجيات والأنظمة. جميع الحقوق محفوظة.</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800, once:true});</script>
 </body>
 </html>
