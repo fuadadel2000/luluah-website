@@ -5,53 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اتصل بنا – اللؤلؤة للبرمجيات</title>
     <meta name="description" content="تواصل مع فريق اللؤلؤة للبرمجيات والأنظمة للاستفسار أو الدعم الفني.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0F172A; color: #E2E8F0; line-height: 1.6; }
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-        header { background-color: #1E293B; padding: 20px 0; border-bottom: 2px solid #3B82F6; }
-        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 2rem; font-weight: bold; color: #3B82F6; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Cairo', sans-serif; background-color: #0F172A; color: #E2E8F0; line-height: 1.7; }
+        .container { max-width: 800px; margin: auto; padding: 0 20px; }
+        nav { background: #0F172A; padding: 20px 0; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #3B82F6; }
         .logo span { color: #F59E0B; }
-        nav a { color: #E2E8F0; margin: 0 15px; text-decoration: none; font-size: 1.1rem; }
-        nav a:hover { color: #3B82F6; }
-        h1 { text-align: center; margin: 40px 0; font-size: 2rem; color: #F59E0B; }
-        form { background: #1E293B; padding: 30px; border-radius: 12px; border: 1px solid #334155; }
-        label { display: block; margin: 15px 0 5px; color: #94A3B8; }
-        input, textarea { width: 100%; padding: 12px; border: 1px solid #334155; border-radius: 8px; background: #0F172A; color: #E2E8F0; font-size: 1rem; }
-        button { background-color: #3B82F6; color: white; padding: 14px 30px; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; margin-top: 20px; }
-        button:hover { background-color: #2563EB; }
-        footer { background: #1E293B; text-align: center; padding: 20px; color: #64748B; margin-top: 40px; border-top: 1px solid #334155; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { color: #E2E8F0; text-decoration: none; font-weight: 600; font-size: 1.05rem; transition: 0.3s; }
+        .nav-links a:hover { color: #F59E0B; }
+        .main-content { padding: 120px 0 80px; }
+        h1 { text-align: center; font-size: 2.2rem; font-weight: 900; color: #F59E0B; margin-bottom: 15px; }
+        .subtitle { text-align: center; color: #94A3B8; margin-bottom: 40px; }
+        form { background: #1E293B; padding: 40px; border-radius: 16px; border: 1px solid #334155; }
+        label { display: block; margin: 20px 0 8px; color: #94A3B8; font-weight: 600; }
+        input, textarea { width: 100%; padding: 14px; border: 1px solid #334155; border-radius: 10px; background: #0F172A; color: #E2E8F0; font-size: 1rem; font-family: 'Cairo', sans-serif; }
+        button { background: #3B82F6; color: white; padding: 16px 35px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 700; cursor: pointer; margin-top: 25px; transition: 0.3s; font-family: 'Cairo', sans-serif; }
+        button:hover { background: #2563EB; transform: translateY(-2px); }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 15px rgba(37,211,102,0.3); z-index: 999; transition: 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        footer { background: #0B1120; padding: 30px 0; text-align: center; color: #64748B; border-top: 1px solid #1E293B; margin-top: 60px; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <div class="logo">اللؤلؤة <span>للبرمجيات</span></div>
-            <nav>
-                <a href="index.html">الرئيسية</a>
-                <a href="features.html">المميزات</a>
-                <a href="downloads.html">التحميلات</a>
-                <a href="contact.html">اتصل بنا</a>
-            </nav>
-        </div>
-    </header>
 
-    <main class="container">
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">اللؤلؤة <span>للبرمجيات</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="features.html">المميزات</a></li>
+                <li><a href="downloads.html">التحميلات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content container">
         <h1>اتصل بنا</h1>
-        <form action="#" method="post">
-            <label>الاسم</label>
-            <input type="text" name="name" required>
-            <label>البريد الإلكتروني</label>
-            <input type="email" name="email" required>
-            <label>الرسالة</label>
-            <textarea rows="5" name="message" required></textarea>
-            <button type="submit">إرسال</button>
+        <p class="subtitle">نحن هنا للإجابة على استفساراتك</p>
+
+        <form action="https://formspree.io/f/XXXXXXXXX" method="POST">
+            <label for="name">الاسم الكامل *</label>
+            <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
+
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" id="email" name="email" placeholder="بريدك الإلكتروني (اختياري)">
+
+            <label for="phone">رقم الهاتف *</label>
+            <input type="tel" id="phone" name="phone" placeholder="مثلاً: 967771234567" required>
+
+            <label for="message">الرسالة *</label>
+            <textarea id="message" name="message" rows="5" placeholder="اكتب استفسارك هنا..." required></textarea>
+
+            <button type="submit"><i class="fas fa-paper-plane"></i> إرسال الرسالة</button>
         </form>
     </main>
+
+    <a href="https://wa.me/967XXXXXXXXX?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20نظام%20لؤلؤة" class="whatsapp-float" target="_blank" title="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <footer>
         <p>© 2025 اللؤلؤة للبرمجيات والأنظمة. جميع الحقوق محفوظة.</p>
     </footer>
+
 </body>
 </html>
