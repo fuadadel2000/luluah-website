@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا – اللؤلؤة للبرمجيات</title>
+    <meta name="description" content="تواصل مع فريق اللؤلؤة للبرمجيات والأنظمة للاستفسار أو الدعم الفني.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0F172A; color: #E2E8F0; line-height: 1.6; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        header { background-color: #1E293B; padding: 20px 0; border-bottom: 2px solid #3B82F6; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 2rem; font-weight: bold; color: #3B82F6; }
+        .logo span { color: #F59E0B; }
+        nav a { color: #E2E8F0; margin: 0 15px; text-decoration: none; font-size: 1.1rem; }
+        nav a:hover { color: #3B82F6; }
+        h1 { text-align: center; margin: 40px 0; font-size: 2rem; color: #F59E0B; }
+        form { background: #1E293B; padding: 30px; border-radius: 12px; border: 1px solid #334155; }
+        label { display: block; margin: 15px 0 5px; color: #94A3B8; }
+        input, textarea { width: 100%; padding: 12px; border: 1px solid #334155; border-radius: 8px; background: #0F172A; color: #E2E8F0; font-size: 1rem; }
+        button { background-color: #3B82F6; color: white; padding: 14px 30px; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; margin-top: 20px; }
+        button:hover { background-color: #2563EB; }
+        footer { background: #1E293B; text-align: center; padding: 20px; color: #64748B; margin-top: 40px; border-top: 1px solid #334155; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">اللؤلؤة <span>للبرمجيات</span></div>
+            <nav>
+                <a href="index.html">الرئيسية</a>
+                <a href="features.html">المميزات</a>
+                <a href="downloads.html">التحميلات</a>
+                <a href="contact.html">اتصل بنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>اتصل بنا</h1>
+        <form action="#" method="post">
+            <label>الاسم</label>
+            <input type="text" name="name" required>
+            <label>البريد الإلكتروني</label>
+            <input type="email" name="email" required>
+            <label>الرسالة</label>
+            <textarea rows="5" name="message" required></textarea>
+            <button type="submit">إرسال</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 اللؤلؤة للبرمجيات والأنظمة. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>
