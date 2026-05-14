@@ -4,92 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اللؤلؤة للبرمجيات والأنظمة - نظام ERP سحابي متكامل</title>
-    <meta name="description" content="نظام لؤلؤة ERP - حلول محاسبية وإدارية متكاملة متعددة الفروع تناسب السوق السعودي واليمني. إدارة المبيعات، المشتريات، المخزون، والعملاء.">
+    <meta name="description" content="نظام لؤلؤة ERP - حلول محاسبية وإدارية متكاملة متعددة الفروع تناسب السوق السعودي واليمني.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0F172A; color: #E2E8F0; line-height: 1.6; }
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
-        header { background-color: #1E293B; padding: 20px 0; border-bottom: 2px solid #3B82F6; }
-        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 2rem; font-weight: bold; color: #3B82F6; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Cairo', sans-serif; background-color: #0F172A; color: #E2E8F0; line-height: 1.7; }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        
+        /* ====== شريط التنقل ====== */
+        nav { background: transparent; padding: 20px 0; position: fixed; top: 0; width: 100%; z-index: 1000; transition: 0.3s; }
+        nav.scrolled { background: #0F172A; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #3B82F6; }
         .logo span { color: #F59E0B; }
-        nav a { color: #E2E8F0; margin: 0 15px; text-decoration: none; font-size: 1.1rem; }
-        nav a:hover { color: #3B82F6; }
-        .hero { text-align: center; padding: 80px 20px; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { color: #E2E8F0; text-decoration: none; font-weight: 600; font-size: 1.05rem; transition: 0.3s; }
+        .nav-links a:hover { color: #F59E0B; }
+        .btn-nav { background: #3B82F6; color: white; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+        .btn-nav:hover { background: #2563EB; transform: translateY(-2px); }
+        
+        /* ====== الهيرو ====== */
+        .hero { padding: 150px 0 100px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(59,130,246,0.1), transparent 50%); animation: rotate 20s linear infinite; }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        .hero .container { position: relative; }
+        .hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; }
         .hero h1 span { color: #F59E0B; }
-        .hero p { font-size: 1.2rem; color: #94A3B8; margin-bottom: 30px; }
-        .btn { background-color: #3B82F6; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-size: 1.1rem; display: inline-block; }
-        .btn:hover { background-color: #2563EB; }
-        .features { padding: 60px 0; }
-        .features h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; color: #F59E0B; }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .feature-card { background: #1E293B; padding: 30px; border-radius: 12px; border: 1px solid #334155; text-align: center; }
-        .feature-card h3 { font-size: 1.3rem; margin: 15px 0; color: #3B82F6; }
+        .hero p { font-size: 1.3rem; color: #94A3B8; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary, .btn-secondary { padding: 18px 35px; border-radius: 50px; font-size: 1.1rem; font-weight: 700; text-decoration: none; transition: 0.3s; }
+        .btn-primary { background: #3B82F6; color: white; }
+        .btn-primary:hover { background: #2563EB; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(59,130,246,0.3); }
+        .btn-secondary { border: 2px solid #F59E0B; color: #F59E0B; }
+        .btn-secondary:hover { background: #F59E0B; color: #0F172A; }
+        
+        /* ====== المميزات ====== */
+        .section { padding: 80px 0; }
+        .section h2 { text-align: center; font-size: 2.2rem; font-weight: 900; color: #F59E0B; margin-bottom: 15px; }
+        .section .subtitle { text-align: center; color: #94A3B8; margin-bottom: 50px; font-size: 1.1rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature-card { background: #1E293B; padding: 40px 30px; border-radius: 16px; border: 1px solid #334155; text-align: center; transition: 0.3s; }
+        .feature-card:hover { border-color: #3B82F6; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .feature-card i { font-size: 2.5rem; color: #F59E0B; margin-bottom: 20px; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: #3B82F6; }
         .feature-card p { color: #94A3B8; }
-        .feature-icon { font-size: 2.5rem; }
-        footer { background: #1E293B; text-align: center; padding: 20px; color: #64748B; margin-top: 40px; border-top: 1px solid #334155; }
+        
+        /* ====== إحصائيات ====== */
+        .stats { background: #1E293B; padding: 60px 0; }
+        .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2.5rem; font-weight: 900; color: #F59E0B; }
+        .stat-label { color: #94A3B8; font-size: 1.1rem; }
+        
+        /* ====== التذييل ====== */
+        footer { background: #0B1120; padding: 60px 0 30px; border-top: 1px solid #1E293B; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { color: #F59E0B; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-col a { color: #94A3B8; text-decoration: none; display: block; margin: 8px 0; transition: 0.3s; }
+        .footer-col a:hover { color: #3B82F6; }
+        .footer-bottom { text-align: center; color: #64748B; padding-top: 20px; border-top: 1px solid #1E293B; }
+        .social-icons { display: flex; gap: 15px; margin-top: 15px; }
+        .social-icons a { color: #94A3B8; font-size: 1.5rem; transition: 0.3s; }
+        .social-icons a:hover { color: #3B82F6; }
+        
+        /* ====== متجاوب ====== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container header-content">
+    <nav id="navbar">
+        <div class="container nav-container">
             <div class="logo">اللؤلؤة <span>للبرمجيات</span></div>
-            <nav>
-                <a href="#">الرئيسية</a>
-                <a href="#features">المميزات</a>
-                <a href="#">التحميلات</a>
-                <a href="#">اتصل بنا</a>
-            </nav>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="features.html">المميزات</a></li>
+                <li><a href="downloads.html">التحميلات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <a href="downloads.html" class="btn-nav">تحميل مجاني</a>
         </div>
-    </header>
+    </nav>
 
-    <section class="hero container">
-        <h1>نظام <span>لؤلؤة</span> لإدارة موارد المؤسسات</h1>
-        <p>حل برمجي متكامل ومتعدد الفروع لإدارة أعمالك بكفاءة عالية. صُمم للسوقين السعودي واليمني.</p>
-        <a href="#" class="btn">🚀 ابدأ الآن مجاناً</a>
+    <section class="hero">
+        <div class="container">
+            <h1 data-aos="fade-up">نظام <span>لؤلؤة</span> لإدارة موارد المؤسسات</h1>
+            <p data-aos="fade-up" data-aos-delay="100">حل برمجي متكامل ومتعدد الفروع لإدارة أعمالك بكفاءة عالية. صُمم للسوقين السعودي واليمني.</p>
+            <div class="btn-group" data-aos="fade-up" data-aos-delay="200">
+                <a href="#" class="btn-primary"><i class="fas fa-rocket"></i> ابدأ الآن مجاناً</a>
+                <a href="features.html" class="btn-secondary"><i class="fas fa-info-circle"></i> تعرف على المميزات</a>
+            </div>
+        </div>
     </section>
 
-    <section id="features" class="features container">
-        <h2>لماذا تختار لؤلؤة؟</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🏢</div>
-                <h3>متعدد الفروع</h3>
-                <p>إدارة غير محدودة للفروع والمخازن مع عزل كامل للبيانات والصلاحيات.</p>
+    <section class="section" data-aos="fade-up">
+        <div class="container">
+            <h2>لماذا تختار لؤلؤة؟</h2>
+            <p class="subtitle">مميزات تجعل نظامك المحاسبي متكاملاً وفعالاً</p>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="0"><i class="fas fa-building"></i><h3>متعدد الفروع</h3><p>إدارة غير محدودة للفروع مع عزل كامل للبيانات والصلاحيات.</p></div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-boxes"></i><h3>ذكاء المخزون</h3><p>تتبع لحظي، فك تلقائي للوحدات، وتنبيهات ذكية.</p></div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-mobile-alt"></i><h3>تطبيق جوال</h3><p>نقطة بيع كاملة على هاتفك من أي مكان.</p></div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-chart-bar"></i><h3>تقارير محاسبية</h3><p>قوائم دخل، ميزان مراجعة، وأرباح يومية دقيقة.</p></div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-shield-alt"></i><h3>صلاحيات متقدمة</h3><p>تحكم كامل في صلاحيات كل مستخدم.</p></div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="500"><i class="fas fa-database"></i><h3>نسخ احتياطي</h3><p>جدولة تلقائية واستعادة فورية للبيانات.</p></div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">📦</div>
-                <h3>ذكاء المخزون</h3>
-                <p>تتبع لحظي للمخزون، وفك تلقائي للوحدات، وتنبيهات ذكية عند انخفاض الكميات.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>تطبيق جوال</h3>
-                <p>نقطة بيع كاملة على هاتفك. بيع، شراء، وتقارير فورية من أي مكان.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>تقارير محاسبية</h3>
-                <p>قوائم دخل، ميزان مراجعة، وأرباح يومية بدقة متناهية وبنقرة زر.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>صلاحيات متقدمة</h3>
-                <p>تحكم كامل في صلاحيات المستخدمين. كل مستخدم يرى فقط ما تسمح له به.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💾</div>
-                <h3>نسخ احتياطي تلقائي</h3>
-                <p>حماية كاملة لبياناتك مع جدولة للنسخ الاحتياطي واستعادة فورية.</p>
+        </div>
+    </section>
+
+    <section class="stats" data-aos="fade-up">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">فروع مدعومة</div></div>
+                <div class="stat-item"><div class="stat-number">200+</div><div class="stat-label">صنف مُدار</div></div>
+                <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">دعم فني</div></div>
+                <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">رضا العملاء</div></div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 اللؤلؤة للبرمجيات والأنظمة. جميع الحقوق محفوظة.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>لؤلؤة للبرمجيات</h4>
+                    <p style="color: #94A3B8;">حلول تقنية مبتكرة لإدارة أعمالك</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="features.html">المميزات</a>
+                    <a href="downloads.html">التحميلات</a>
+                    <a href="contact.html">اتصل بنا</a>
+                </div>
+                <div class="footer-col">
+                    <h4>تواصل معنا</h4>
+                    <a href="mailto:info@luluah-software.com"><i class="fas fa-envelope"></i> info@luluah-software.com</a>
+                    <a href="#"><i class="fas fa-phone"></i> +967 000 000 000</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> صنعاء، اليمن</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 اللؤلؤة للبرمجيات والأنظمة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50); });
+    </script>
 </body>
 </html>
